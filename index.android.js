@@ -37,7 +37,7 @@ export default class Home extends Component {
   };
 
   onCalcPress = () => {
-    setTimeout(this.redirect, 85);
+    this.redirect()
   };
   
   redirect = () => {

@@ -15,7 +15,7 @@ export const Heading = ({ children, firstLine }) =>
 
 const colors = {
   aqua: "#3ad4ff",
-  imagenCol: "#001a4b",
+  imagenCol: "#001a4b"
 };
 
 const styles = {
@@ -30,3 +30,11 @@ const styles = {
     color: "#004D40"
   }
 };
+
+export const LI = ({ children }) =>
+  <Text style={{ marginLeft: 30 }}>
+    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>
+      {"\t\t•\t"}
+    </Text>
+    {children}
+  </Text>;

@@ -10,7 +10,7 @@ const weightArray = Array.from({ length: 28 }, (v, k) => k);
 const WeightSlider = ({ onChange, strength, weight }) =>
   <View style={{ position: "relative" }}>
     <View style={styles.extraInfo}>
-      <Text style={styles.extraInfoText}>PATIENT WEIGHT</Text>
+      <Text style={styles.extraInfoText}>PATIENT WEIGHT (kg)</Text>
     </View>
     <View style={styles.container}>
       <View style={styles.SliderLabel}>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     marginRight: deviceWidth * 0.15,
     position: "absolute",
     left: deviceWidth * 0.35,
-    transform: [{ translateX: -10 }, { translateY: 90 }]
+    transform: [{ translateX: -25 }, { translateY: 90 }]
   },
   carousel: {
     // ...border,
@@ -156,9 +156,9 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderTopWidth: 0,
-    borderRightWidth: 15,
+    borderRightWidth: 25,
     borderBottomWidth: 30,
-    borderLeftWidth: 15,
+    borderLeftWidth: 25,
     borderBottomColor: "white",
     borderRightColor: "transparent",
     borderTopColor: "transparent",

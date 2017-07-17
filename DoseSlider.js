@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     marginRight: deviceWidth * 0.15,
     position: "absolute",
     left: deviceWidth * 0.35,
-    transform: [{ translateX: -10 }, { translateY: 90 }]
+    transform: [{ translateX: -25 }, { translateY: 90 }]
   },
   carousel: {
     // ...border,
@@ -163,9 +163,9 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderTopWidth: 0,
-    borderRightWidth: 15,
+    borderRightWidth: 25,
     borderBottomWidth: 30,
-    borderLeftWidth: 15,
+    borderLeftWidth: 25,
     borderBottomColor: 'white',
     borderRightColor: "transparent",
     borderTopColor: "transparent",
