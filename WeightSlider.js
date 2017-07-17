@@ -39,7 +39,7 @@ const WeightSlider = ({ onChange, strength, weight }) =>
           itemWidth={deviceWidth * 0.7 / 3}
           itemHeight={90}
           sliderHeight={100}
-          inactiveSlideScale={1}
+          inactiveSlideScale={0.7}
           inactiveSlideOpacity={0.5}
           enableMomentum={true}
           containerCustomStyle={styles.carousel}

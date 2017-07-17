@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Image,
-  StatusBar
+  StatusBar,
+  I18nManager
 } from "react-native";
 import { MKButton } from "react-native-material-kit";
 import { Container, Content, List, ListItem, Right, Icon } from "native-base";
@@ -16,6 +17,12 @@ import Information from "./Information";
 import Calculator from "./Calculator";
 import logo from "./images/logo.jpg";
 import Orientation from "react-native-orientation-locker";
+
+try {
+  I18nManager.allowRTL(false);
+} catch (e) {
+  console.log(e);
+}
 
 const deviceWidth = parseInt(Dimensions.get("window").width);
 
@@ -37,12 +44,13 @@ export default class Home extends Component {
   };
 
   onCalcPress = () => {
-    this.redirect()
+    setTimeout(this.redirect, 50);
   };
-  
+
   redirect = () => {
     this.props.navigation.navigate("Calculator");
   };
+
   render() {
     return (
       <View style={styles.container}>
