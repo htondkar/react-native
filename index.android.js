@@ -82,31 +82,24 @@ export default class Home extends Component {
                 {"Maintenance Dosing Calculator".toUpperCase()}
               </Text>
             </MKButton>
-            {/* <Button
-              onPress={this.onCalcPress}
-              color="#72bcdd"
-              title=" Maintenance Dosing Calculator"
-            /> */}
-            {/* <Text
-                style={{ color: "white", fontWeight: "bold", fontSize: 16 }}
-              >
-                Maintenance Dosing Calculator
-              </Text>
-            </Button> */}
           </View>
         </View>
         <Container>
           <Content>
             <List>
-              {titles.map(item =>
+              {titles.map((item, i) =>
                 <ListItem
                   key={item.id}
                   button
+                  itemDivider={true}
+                  style={{ backgroundColor: i % 2 === 0 ? "white" : "#c4e9fb" }}
                   onPress={() => this.onPress(item.id)}
                 >
-                  <Text>
-                    {item.text}
-                  </Text>
+                  <View>
+                    <Text>
+                      {item.text}
+                    </Text>
+                  </View>
                   <Right>
                     <Icon name="arrow-forward" />
                   </Right>
@@ -153,7 +146,7 @@ AppRegistry.registerComponent("Sedodex", () => Router);
 
 const colors = {
   aqua: "#3ad4ff",
-  imagenCol: "#001a4b",
+  imagenCol: "#083672",
   green: "#9CCC65"
 };
 

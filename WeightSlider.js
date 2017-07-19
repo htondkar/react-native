@@ -24,7 +24,7 @@ const WeightSlider = ({ onChange, strength, weight }) =>
             style={{
               textAlign: "center",
               width: 40,
-              fontSize: 46,
+              fontSize: 38,
               color: colors.imagenCol
             }}
           />
@@ -68,7 +68,7 @@ const WeightSlider = ({ onChange, strength, weight }) =>
             style={{
               textAlign: "center",
               width: 40,
-              fontSize: 46,
+              fontSize: 38,
               color: colors.imagenCol
             }}
           />
@@ -84,7 +84,7 @@ export default WeightSlider;
 
 const colors = {
   skyBlue: "#72bcdd",
-  aqua: "#38c6f4",
+  aqua: "#a2defa",
   imagenCol: "#083672",
   green: "#9CCC65"
 };

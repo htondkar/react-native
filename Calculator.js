@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   logo: {
     // ...border,
     width: deviceWidth,
-    height: 70,
+    height: 55,
     resizeMode: "contain"
   },
   positionedCenter: {
