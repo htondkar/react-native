@@ -20,7 +20,7 @@ export default class StrengthChooser extends Component {
               style={styles.button}
               onPress={() => this.props.onChange("4mcg")}
             >
-              <Text style={{ color: "#FFA000", fontWeight: "bold" }}>
+              <Text style={{ color: "white", fontWeight: "bold" }}>
                 Sedodex
               </Text>
               <Text
@@ -37,7 +37,7 @@ export default class StrengthChooser extends Component {
               style={styles.button}
               onPress={() => this.props.onChange("8mcg")}
             >
-              <Text style={{ color: "#F50057", fontWeight: "bold" }}>
+              <Text style={{ color: "white", fontWeight: "bold" }}>
                 Sedodex
               </Text>
               <Text

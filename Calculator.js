@@ -61,14 +61,14 @@ const ModalContent = ({ onAction }) =>
             onPress={() => onAction("4mcg")}
             style={{ marginBottom: 20 }}
           >
-            <Text style={{ fontWeight: "bold", color: "white" }}>
+            <Text style={{ fontWeight: "bold", color: "#FFA000" }}>
               Sedodex 4 mcg/ml
             </Text>
           </Button>
         </View>
         <View>
           <Button primary onPress={() => onAction("8mcg")}>
-            <Text style={{ fontWeight: "bold", color: "white" }}>
+            <Text style={{ fontWeight: "bold", color: "#F50057" }}>
               Sedodex 8 mcg/ml
             </Text>
           </Button>

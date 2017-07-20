@@ -109,12 +109,13 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   sliderIndicator: {
+    // ...border,
     zIndex: 5,
     marginLeft: deviceWidth * 0.15,
     marginRight: deviceWidth * 0.15,
     position: "absolute",
-    left: deviceWidth * 0.35,
-    transform: [{ translateX: -25 }, { translateY: 90 }]
+    left: deviceWidth * 0.35 - deviceWidth * 0.05,
+    bottom: 0
   },
   carousel: {
     // ...border,
@@ -143,7 +144,6 @@ const styles = StyleSheet.create({
     top: 5,
     left: 0,
     zIndex: 1
-    // transform: [{translateX: -10}]
   },
   unit: {
     // ...border,
@@ -163,10 +163,10 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderStyle: "solid",
     borderTopWidth: 0,
-    borderRightWidth: 25,
-    borderBottomWidth: 30,
-    borderLeftWidth: 25,
-    borderBottomColor: 'white',
+    borderRightWidth: deviceWidth * 0.05,
+    borderBottomWidth: deviceWidth * 0.06,
+    borderLeftWidth: deviceWidth * 0.05,
+    borderBottomColor: "white",
     borderRightColor: "transparent",
     borderTopColor: "transparent",
     borderLeftColor: "transparent"
