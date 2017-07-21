@@ -31,14 +31,7 @@ export default class InfusionRate extends Component {
               marginVertical: 5
             }}
           >
-            <Text
-              style={[
-                styles.resultText,
-                strength === "4mcg"
-                  ? { color: "#FFA000" }
-                  : { color: "#F50057" }
-              ]}
-            >
+            <Text style={[styles.resultText, { color: "#FFA000" }]}>
               {this.props.value}
             </Text>
           </View>
