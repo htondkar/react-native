@@ -8,7 +8,8 @@ import {
   Easing,
   StatusBar,
   Modal,
-  Platform
+  Platform,
+  TouchableHighlight
 } from "react-native";
 import { Button } from "native-base";
 import Dimensions from "Dimensions";
@@ -19,14 +20,6 @@ import WeightSlider from "./WeightSlider";
 import DoseSlider from "./DoseSlider";
 import InfusionRate from "./InfusionRate";
 import StrengthChooser from "./StrengthChooser";
-import { NavigationActions } from 'react-navigation'
-
-
-const navigateAction = NavigationActions.navigate({
-  routeName: 'Calculator',
-  params: {},
-  action: NavigationActions.navigate({ routeName: 'Home'})
-})
 
 const colors = {
   skyBlue: "#72bcdd",
@@ -130,8 +123,8 @@ export default class Calculator extends Component {
   };
 
   goBack = () => {
-    this.props.navigation.dispatch(backAction)
-  }
+    this.props.navigation.goBack();
+  };
 
   render() {
     return (
@@ -155,8 +148,10 @@ export default class Calculator extends Component {
         <View
           style={{ display: "flex", flex: 1, justifyContent: "space-between" }}
         >
-          <View style={styles.imageContainer} onPress={this.goBack}>
-            <Image source={logo} style={styles.logo} />
+          <View style={styles.imageContainer} >
+            <TouchableHighlight onPress={this.goBack} underlayColor="white">
+              <Image source={logo} style={styles.logo} />
+            </TouchableHighlight>
           </View>
           <WeightSlider
             onChange={this.onValueWeight}
@@ -197,7 +192,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   container: {
-    paddingTop: (Platform.OS === 'ios') ? 20 : 0,
+    paddingTop: Platform.OS === "ios" ? 20 : 0,
     display: "flex",
     flex: 1,
     backgroundColor: "#FFF"
