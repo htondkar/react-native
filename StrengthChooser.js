@@ -23,7 +23,7 @@ export default class StrengthChooser extends Component {
               <Text style={{ color: "white", fontWeight: "bold" }}>
                 Sedodex
               </Text>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>4 mcg/ml</Text>
+              <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>4 mcg/ml</Text>
             </MKButton>
             <MKButton
               backgroundColor="#3f51b5"
@@ -36,7 +36,7 @@ export default class StrengthChooser extends Component {
               <Text style={{ color: "white", fontWeight: "bold" }}>
                 Sedodex
               </Text>
-              <Text style={{ fontSize: 18, fontWeight: "bold" }}>8 mcg/ml</Text>
+              <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>8 mcg/ml</Text>
             </MKButton>
           </FooterTab>
         </Footer>

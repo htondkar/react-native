@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     color: colors.imagenCol
   },
   extraInfo: {
+    backgroundColor: 'transparent',
     ...flexCenter,
     width: deviceWidth,
     position: "absolute",

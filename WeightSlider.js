@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   },
   extraInfo: {
+     backgroundColor: 'transparent',
     ...flexCenter,
     width: deviceWidth,
     position: "absolute",

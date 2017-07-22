@@ -7,7 +7,8 @@ import {
   Image,
   Easing,
   StatusBar,
-  Modal
+  Modal,
+  Platform
 } from "react-native";
 import { Button } from "native-base";
 import Dimensions from "Dimensions";
@@ -18,6 +19,14 @@ import WeightSlider from "./WeightSlider";
 import DoseSlider from "./DoseSlider";
 import InfusionRate from "./InfusionRate";
 import StrengthChooser from "./StrengthChooser";
+import { NavigationActions } from 'react-navigation'
+
+
+const navigateAction = NavigationActions.navigate({
+  routeName: 'Calculator',
+  params: {},
+  action: NavigationActions.navigate({ routeName: 'Home'})
+})
 
 const colors = {
   skyBlue: "#72bcdd",
@@ -61,14 +70,14 @@ const ModalContent = ({ onAction }) =>
             onPress={() => onAction("4mcg")}
             style={{ marginBottom: 20 }}
           >
-            <Text style={{ fontWeight: "bold", color: "#FFA000" }}>
+            <Text style={{ fontWeight: "bold", color: "white" }}>
               Sedodex 4 mcg/ml
             </Text>
           </Button>
         </View>
         <View>
           <Button primary onPress={() => onAction("8mcg")}>
-            <Text style={{ fontWeight: "bold", color: "#F50057" }}>
+            <Text style={{ fontWeight: "bold", color: "white" }}>
               Sedodex 8 mcg/ml
             </Text>
           </Button>
@@ -120,6 +129,10 @@ export default class Calculator extends Component {
     setTimeout(this.openModal, 100);
   };
 
+  goBack = () => {
+    this.props.navigation.dispatch(backAction)
+  }
+
   render() {
     return (
       <ScrollView
@@ -142,7 +155,7 @@ export default class Calculator extends Component {
         <View
           style={{ display: "flex", flex: 1, justifyContent: "space-between" }}
         >
-          <View style={styles.imageContainer}>
+          <View style={styles.imageContainer} onPress={this.goBack}>
             <Image source={logo} style={styles.logo} />
           </View>
           <WeightSlider
@@ -184,6 +197,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   container: {
+    paddingTop: (Platform.OS === 'ios') ? 20 : 0,
     display: "flex",
     flex: 1,
     backgroundColor: "#FFF"

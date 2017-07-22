@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Platform } from "react-native";
 
 import AdministrationWithOtherFluids from "./pages/AdministrationWithOtherFluids";
 import AdverseEffects from "./pages/AdverseEffects";
@@ -31,7 +31,7 @@ const headerOptions = {
     elevation: 3
   },
   headerTitleStyle: {
-    fontFamily: "sans-serif-thin",
+    fontFamily: (Platform.OS === 'ios') ? "System" : "sans-serif-thin",
     alignSelf: "center"
   },
   headerTintColor: colors.aqua
