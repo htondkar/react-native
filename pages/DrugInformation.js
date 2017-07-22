@@ -4,50 +4,88 @@ import Dimensions from "Dimensions";
 import { Bold, LineBreak, Heading } from "../helpers/components";
 import ampule from "../images/amp.jpg";
 // import FitImage from "react-native-fit-image";
+import { FontChanger } from "../helpers/components";
 
 export default class drugInformation extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fontSize: 14,
+      fontChangerIsVisible: false
+    };
+  }
+
+  changeFontSize = option => {
+    const { fontSize: currentSize } = this.state;
+    if (option === "+") {
+      if (currentSize < 20) {
+        this.setState({ fontSize: currentSize + 2 });
+      }
+    } else {
+      if (currentSize > 16) {
+        this.setState({ fontSize: currentSize - 2 });
+      }
+    }
+  };
+
+  makeVisible = () => {
+    clearTimeout(this.makeHidden);
+    this.setState({ fontChangerIsVisible: true });
+    setTimeout(this.makeHidden, 1000);
+  };
+
+  makeHidden = () => {
+    this.setState({ fontChangerIsVisible: false });
+  };
+   componentWillUnmount = () => {
+    clearTimeout(this.makeHidden);
+  };
   render() {
     return (
-      <ScrollView style={styles.wrapper}>
-        <View style={styles.paragraph}>
-          <Bold>Sedodex ® </Bold>
-          <View>
-            <Text>
-              (Dexmedetomidine as HCL) 100 mcg per mL, 1 mL Injection {"\n"}
-            </Text>
+      <View style={{ flex: 1 }}>
+        {this.state.fontChangerIsVisible &&
+          <FontChanger onChange={this.changeFontSize} />}
+        <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
+          <View style={styles.paragraph}>
+            <Bold>Sedodex ® </Bold>
+            <View>
+              <Text style={{ fontSize: this.state.fontSize }}>
+                (Dexmedetomidine as HCL) 100 mcg per mL, 1 mL Injection {"\n"}
+              </Text>
+            </View>
+            <Bold>Storage</Bold>
+            <View>
+              <Text style={{ fontSize: this.state.fontSize }}>
+                Store below 25°C. Protect from light and freezing. Please
+                discard the unused portion. {"\n"}
+              </Text>
+            </View>
+            <Bold>Manufacturer</Bold>
+            <View>
+              <Text style={{ fontSize: this.state.fontSize }}>
+                Imagen Co. Ltd, Tehran, Iran {"\n"}
+              </Text>
+            </View>
+            <Bold>Manufacturing Contractor</Bold>
+            <View>
+              <Text style={{ fontSize: this.state.fontSize }}>
+                Themis Medicare Pvt. Ltd., Hardiwar, India {"\n"}
+              </Text>
+            </View>
+            <Bold>Appearance</Bold>
+            <View>
+              <Text style={{ fontSize: this.state.fontSize }}>
+                Sedodex® injection is filled into 1-ml Amber, glass ampoules. 1
+                PVC rondo tray containing 1 ampoule, is packaged in one printed
+                cardboard box, along with one leaflet.
+              </Text>
+            </View>
           </View>
-          <Bold>Storage</Bold>
-          <View>
-            <Text>
-              Store below 25°C. Protect from light and freezing. Please discard
-              the unused portion. {"\n"}
-            </Text>
+          <View style={styles.imageContainer}>
+            <Image source={ampule} style={styles.image} resizeMode="contain" />
           </View>
-          <Bold>Manufacturer</Bold>
-          <View>
-            <Text>
-              Imagen Co. Ltd, Tehran, Iran {"\n"}
-            </Text>
-          </View>
-          <Bold>Manufacturing Contractor</Bold>
-          <View>
-            <Text>
-              Themis Medicare Pvt. Ltd., Hardiwar, India {"\n"}
-            </Text>
-          </View>
-          <Bold>Appearance</Bold>
-          <View>
-            <Text>
-              Sedodex® injection is filled into 1-ml Amber, glass ampoules. 1
-              PVC rondo tray containing 1 ampoule, is packaged in one printed
-              cardboard box, along with one leaflet.
-            </Text>
-          </View>
-        </View>
-        <View style={styles.imageContainer}>
-          <Image source={ampule} style={styles.image} resizeMode="contain" />
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     );
   }
 }
@@ -70,7 +108,7 @@ const styles = {
     marginBottom: 10
   },
   imageContainer: {
-    alignSelf: 'center',
+    alignSelf: "center",
     marginBottom: 40
   },
   image: {

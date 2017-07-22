@@ -12,26 +12,13 @@ export default class InfusionRate extends Component {
         <View style={styles.wrap}>
           <View>
             <Text style={styles.text}>Infusion Rate</Text>
-            <Text
-              style={{
-                textAlign: "center",
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 18
-              }}
-            >
+            <Text style={styles.strength}>
               {strength === "4mcg" ? "4 mcg " : "8 mcg "}
               Strength
             </Text>
           </View>
-          <View
-            style={{
-              paddingHorizontal: 30,
-              borderRadius: 20,
-              marginVertical: 5
-            }}
-          >
-            <Text style={[styles.resultText, { color: "#FFA000" }]}>
+          <View>
+            <Text style={styles.resultText}>
               {this.props.value}
             </Text>
           </View>
@@ -82,11 +69,18 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   resultText: {
-    fontSize: 72
+    color: "#FFA000",
+    fontSize: 80
   },
   text: {
     textAlign: "center",
     fontSize: 15,
     color: "white"
+  },
+  strength: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "white",
+    fontSize: 18
   }
 });
