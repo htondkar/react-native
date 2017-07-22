@@ -31,7 +31,7 @@ export default class PharmacokineticProperty extends Component {
   makeVisible = () => {
     clearTimeout(this.makeHidden);
     this.setState({ fontChangerIsVisible: true });
-    setTimeout(this.makeHidden, 1000);
+    setTimeout(this.makeHidden, 3000);
   };
 
   makeHidden = () => {
