@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import { Text, View, ScrollView } from "react-native";
 import { administrationWithFluids } from "../text";
 import { colors } from "../helpers/colors";
-import { FontChanger } from "../helpers/components";
-
-const Bold = ({ children }) =>
-  <Text style={styles.bold}>
-    {children} {"\n"}
-  </Text>;
+import { FontChanger, Bold } from "../helpers/components";
 
 const LineBreak = () => <View style={styles.break} />;
 
@@ -23,7 +18,7 @@ export default class AdministrationWithOtherFluids extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -55,7 +50,7 @@ export default class AdministrationWithOtherFluids extends Component {
         <ScrollView onTouchStart={this.makeVisible}>
           <View style={styles.wrapper}>
             <View style={styles.paragraph}>
-              <Bold>Dexmedetomidine:</Bold>
+              <Bold fontSize={this.state.fontSize}>Dexmedetomidine:</Bold>
               <View>
                 <Text style={{ fontSize: this.state.fontSize }}>
                   infusion should not be co-administered through the same
@@ -73,13 +68,15 @@ export default class AdministrationWithOtherFluids extends Component {
               </View>
             </View>
             <View style={styles.paragraph}>
-              <Bold>Contra-indications:</Bold>
+              <Bold fontSize={this.state.fontSize}>Contra-indications:</Bold>
               <Text style={{ fontSize: this.state.fontSize }}>
                 No specific information available.
               </Text>
             </View>
             <View style={styles.paragraph}>
-              <Bold>PreClinical Safety Data:</Bold>
+              <Bold fontSize={this.state.fontSize}>
+                PreClinical Safety Data:
+              </Bold>
               <View>
                 <Text style={{ fontSize: this.state.fontSize }}>
                   Non-clinical data reveal no special hazard for humans based on

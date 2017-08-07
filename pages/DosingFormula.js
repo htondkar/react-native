@@ -16,7 +16,7 @@ export default class DosingFormula extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -35,7 +35,7 @@ export default class DosingFormula extends Component {
   makeHidden = () => {
     this.setState({ fontChangerIsVisible: false });
   };
-   componentWillUnmount = () => {
+  componentWillUnmount = () => {
     clearTimeout(this.makeHidden);
   };
   render() {
@@ -45,7 +45,9 @@ export default class DosingFormula extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Initiation of Intensive Unit Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Initiation of Intensive Unit Sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               <Heading firstLine>For adult patients:</Heading>
               A loading infusion of one mcg/kg over 10 minutes.
@@ -56,7 +58,9 @@ export default class DosingFormula extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Maintenance of Intensive Care Unit Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Maintenance of Intensive Care Unit Sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               <Heading firstLine>For adult patients:</Heading>
               A maintenance infusion of 0.2 to 0.7 mcg/kg/hr. The rate of the
@@ -69,7 +73,9 @@ export default class DosingFormula extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Initiation of Procedural Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Initiation of Procedural Sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               <Heading firstLine>For adult patients:</Heading>
               A loading infusion of one mcg/kg over 10 minutes. For less
@@ -86,7 +92,9 @@ export default class DosingFormula extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Maintenance of Procedural Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Maintenance of Procedural Sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               <Heading firstLine>For adult patients:</Heading>
               The maintenance infusion is generally initiated at 0.6mcg/kg/hr

@@ -15,7 +15,7 @@ export default class AdverseEffects extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -47,7 +47,7 @@ export default class AdverseEffects extends Component {
         <ScrollView  onTouchStart={this.makeVisible}>
           <View style={styles.wrapper}>
             <View style={styles.paragraph}>
-              <Bold>Adverse Effects (Overall)</Bold>
+              <Bold  fontSize={this.state.fontSize}>Adverse Effects (Overall)</Bold>
               <View>
                 <Text style={{ fontSize: this.state.fontSize }}>
                   Overall, the most frequently observed treatment-emergent
@@ -57,7 +57,7 @@ export default class AdverseEffects extends Component {
               </View>
             </View>
             <View style={styles.paragraph}>
-              <Bold>Specific Effects</Bold>
+              <Bold fontSize={this.state.fontSize}>Specific Effects</Bold>
               <Text style={{ fontSize: this.state.fontSize }}>
                 <Heading firstLine>Vascular Disorders:</Heading>
                 Hypotension, Hypertension, Hemorrhage

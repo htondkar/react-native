@@ -15,7 +15,7 @@ export default class Overdose extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,7 @@ export default class Overdose extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Overdose</Bold>
+            <Bold fontSize={this.state.fontSize}>Overdose</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               The tolerability of Dexmedetomidine was noted in one study in
               which healthy subjects were administrated doses at and above the

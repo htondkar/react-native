@@ -15,7 +15,7 @@ export default class drugInteractions extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,9 @@ export default class drugInteractions extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Anesthetics/Sedatives/Hypnotics/Opioids</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Anesthetics/Sedatives/Hypnotics/Opioids
+            </Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Co-administration of Dexmedetomidine with anesthetics,
@@ -64,7 +66,7 @@ export default class drugInteractions extends Component {
             </View>
           </View>
           <View style={[styles.paragraph, { paddingBottom: 20 }]}>
-            <Bold>Neuromuscular Blockers</Bold>
+            <Bold fontSize={this.state.fontSize}>Neuromuscular Blockers</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               In one study of 10 healthy volunteers, administration of
               Dexmedetomidine for 45 minutes at a plasma concentration of 1

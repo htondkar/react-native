@@ -15,7 +15,7 @@ export default class MoreInfo extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,7 @@ export default class MoreInfo extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper}>
           <View style={styles.paragraph}>
-            <Bold>Website</Bold>
+            <Bold fontSize={this.state.fontSize}>Website</Bold>
             <Text
               style={{ color: "blue" }}
               onPress={() => Linking.openURL("http://www.Sedodex.com")}

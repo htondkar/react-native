@@ -18,7 +18,7 @@ export default class drugInformation extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -37,7 +37,7 @@ export default class drugInformation extends Component {
   makeHidden = () => {
     this.setState({ fontChangerIsVisible: false });
   };
-   componentWillUnmount = () => {
+  componentWillUnmount = () => {
     clearTimeout(this.makeHidden);
   };
   render() {
@@ -47,32 +47,32 @@ export default class drugInformation extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Sedodex ® </Bold>
+            <Bold fontSize={this.state.fontSize}>Sedodex ® </Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 (Dexmedetomidine as HCL) 100 mcg per mL, 1 mL Injection {"\n"}
               </Text>
             </View>
-            <Bold>Storage</Bold>
+            <Bold fontSize={this.state.fontSize}>Storage</Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Store below 25°C. Protect from light and freezing. Please
                 discard the unused portion. {"\n"}
               </Text>
             </View>
-            <Bold>Manufacturer</Bold>
+            <Bold fontSize={this.state.fontSize}>Manufacturer</Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Imagen Co. Ltd, Tehran, Iran {"\n"}
               </Text>
             </View>
-            <Bold>Manufacturing Contractor</Bold>
+            <Bold fontSize={this.state.fontSize}>Manufacturing Contractor</Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Themis Medicare Pvt. Ltd., Hardiwar, India {"\n"}
               </Text>
             </View>
-            <Bold>Appearance</Bold>
+            <Bold fontSize={this.state.fontSize}>Appearance</Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Sedodex® injection is filled into 1-ml Amber, glass ampoules. 1

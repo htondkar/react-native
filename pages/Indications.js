@@ -15,7 +15,7 @@ export default class indications extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,9 @@ export default class indications extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Intensive Care Unit sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Intensive Care Unit sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Dexmedetomidine is indicated for sedation of initially intubated
               and mechanically ventilated patients during treatment in an
@@ -54,7 +56,7 @@ export default class indications extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Procedural Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>Procedural Sedation</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Dexmedetomidine is indicated for sedation of non-intubated
               patients prior to and/or during surgical and other procedures.

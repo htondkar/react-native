@@ -15,7 +15,7 @@ export default class WarningsAndPrecautions extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,7 @@ export default class WarningsAndPrecautions extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Drug Administration</Bold>
+            <Bold fontSize={this.state.fontSize}>Drug Administration</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Due to the known pharmacological effects of Dexmedetomidine
               Hydrochloride, it should be administered only by a person skilled
@@ -55,7 +55,9 @@ export default class WarningsAndPrecautions extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Hypotension, Bradycardia, and Sinus Arrest</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Hypotension, Bradycardia, and Sinus Arrest
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Clinically significant episodes of bradycardia and sinus arrest
               have been associated with Dexmedetomidine Hydrochloride
@@ -77,7 +79,7 @@ export default class WarningsAndPrecautions extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Transient Hypertension</Bold>
+            <Bold fontSize={this.state.fontSize}>Transient Hypertension</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Transient Hypertension has been observed primarily during the
               loading dose in associated with the initial peripheral
@@ -87,7 +89,7 @@ export default class WarningsAndPrecautions extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Arousability</Bold>
+            <Bold fontSize={this.state.fontSize}>Arousability</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Some patients receiving Dexmedetomidine have been observed to be
               arousable and alert when stimulated. This alone should not be
@@ -96,10 +98,12 @@ export default class WarningsAndPrecautions extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Withdrawal</Bold>
+            <Bold fontSize={this.state.fontSize}>Withdrawal</Bold>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Intensive Care Unit Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Intensive Care Unit Sedation
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               If Dexmedetomidine were to be administered for more than 24 hours
               and stopped abruptly, withdrawal symptoms similar to those
@@ -110,13 +114,13 @@ export default class WarningsAndPrecautions extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Procedural Sedation</Bold>
+            <Bold fontSize={this.state.fontSize}>Procedural Sedation</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               {`Withdrawal symptoms were not seen after discontinuation of short term infusions of Dexmedetomidine (<6 hours).`}
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Hepatic Impairment</Bold>
+            <Bold fontSize={this.state.fontSize}>Hepatic Impairment</Bold>
             <Text style={{ marginBottom: 30, fontSize: this.state.fontSize }}>
               Since Dexmedetomidine clearance decreases with severity of hepatic
               impairment, dose reduction should be considered in patients with

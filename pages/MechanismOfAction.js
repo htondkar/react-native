@@ -15,7 +15,7 @@ export default class mechanismOfAction extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,9 @@ export default class mechanismOfAction extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Mechanism of action / Effect</Bold>
+            <Bold fontSize={this.state.fontSize}>
+              Mechanism of action / Effect
+            </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Dexmedetomidine is a relatively selective alpha -adrenergic
               agonist with sedative properties. Alpha selectivity is observed in
@@ -57,7 +59,7 @@ export default class mechanismOfAction extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Onset of action</Bold>
+            <Bold fontSize={this.state.fontSize}>Onset of action</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Following infusion, Dexmedetomidine exhibits a rapid distribution
               phase with a half-life of about 6 minutes. Based on sedation
@@ -88,7 +90,7 @@ export default class mechanismOfAction extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Elimination:</Bold>
+            <Bold fontSize={this.state.fontSize}>Elimination:</Bold>
             <Text style={{ marginBottom: 30, fontSize: this.state.fontSize }}>
               A mass balance study demonstrated that after nine days an average
               of 95% of the radioactivity, following intravenous administration

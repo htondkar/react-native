@@ -15,7 +15,7 @@ export default class Incompatibilities extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -45,7 +45,7 @@ export default class Incompatibilities extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Incompatibilities </Bold>
+            <Bold fontSize={this.state.fontSize}>Incompatibilities </Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Administration with Other Fluids: Dexmedetomidine infusion should
               not be co-administered through the same intravenous catheter with

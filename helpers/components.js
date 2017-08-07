@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View, TouchableHighlight } from "react-native";
 
-export const Bold = ({ children }) =>
-  <Text style={styles.bold}>
+export const Bold = ({ children, fontSize }) =>
+  <Text style={{ ...styles.bold, fontSize }}>
     {children} {"\n"}
   </Text>;
 

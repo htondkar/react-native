@@ -15,7 +15,7 @@ export default class DosageAndAdministration extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -45,7 +45,7 @@ export default class DosageAndAdministration extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Administration</Bold>
+            <Bold fontSize={this.state.fontSize}>Administration</Bold>
             <View>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Dexmedetomidine should be administered using a controlled
@@ -65,7 +65,7 @@ export default class DosageAndAdministration extends Component {
             </View>
             <LineBreak />
             <View style={styles.paragraph}>
-              <Bold>Dilution Prior to Administration</Bold>
+              <Bold fontSize={this.state.fontSize}>Dilution Prior to Administration</Bold>
               <Text style={{ fontSize: this.state.fontSize }}>
                 Dexmedetomidine must be diluted in 0.9% Sodium Chloride solution
                 prior to administration. Preparation of solution is the same,

@@ -15,7 +15,7 @@ export default class UseInSpecificPopulations extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -46,7 +46,7 @@ export default class UseInSpecificPopulations extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Pregnancy</Bold>
+            <Bold fontSize={this.state.fontSize}>Pregnancy</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               There are no adequate and well-controlled studies in pregnant
               women. Dexmedetomidine should be used during pregnancy only if the
@@ -54,7 +54,7 @@ export default class UseInSpecificPopulations extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Lactation</Bold>
+            <Bold fontSize={this.state.fontSize}>Lactation</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               It is unknown whether Dexmedetomidine HCL is excreted in human
               milk. Because many drugs are excreted in human milk, caution
@@ -63,7 +63,7 @@ export default class UseInSpecificPopulations extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Labour & Delivery</Bold>
+            <Bold fontSize={this.state.fontSize}>Labour & Delivery</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               The safety of Dexmedetomidine HCL during labour and delivery has
               not been studied. Therefore, Dexmedetomidine HCL is not
@@ -72,7 +72,7 @@ export default class UseInSpecificPopulations extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Pediatrics</Bold>
+            <Bold fontSize={this.state.fontSize}>Pediatrics</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               There have been no clinical studies to establish the safety and
               efficacy of Dexmedetomidine in pediatric patients below 18 years
@@ -81,7 +81,7 @@ export default class UseInSpecificPopulations extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Geriatrics</Bold>
+            <Bold fontSize={this.state.fontSize}>Geriatrics</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Dexmedetomidine is known to be substantially excreted by the
               kidney, and the risk of adverse reactions to this drug may be
@@ -92,7 +92,7 @@ export default class UseInSpecificPopulations extends Component {
             </Text>
           </View>
           <View style={styles.paragraph}>
-            <Bold>Hepatic Impairment</Bold>
+            <Bold fontSize={this.state.fontSize}>Hepatic Impairment</Bold>
             <Text style={{ marginBottom: 30, fontSize: this.state.fontSize }}>
               Since Dexmedetomidine clearance decreases with severity of hepatic
               impairment, dose reduction should be considered in patients with

@@ -18,7 +18,7 @@ export default class PharmacokineticProperty extends Component {
   changeFontSize = option => {
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
-      if (currentSize < 20) {
+      if (currentSize < 24) {
         this.setState({ fontSize: currentSize + 2 });
       }
     } else {
@@ -49,7 +49,7 @@ export default class PharmacokineticProperty extends Component {
           <FontChanger onChange={this.changeFontSize} />}
         <ScrollView style={styles.wrapper} onTouchStart={this.makeVisible}>
           <View style={styles.paragraph}>
-            <Bold>Pharmacokinetic Property</Bold>
+            <Bold fontSize={this.state.fontSize}>Pharmacokinetic Property</Bold>
             <Text style={{ fontSize: this.state.fontSize }}>
               Dexmedetomidine exhibits linear pharmacokinetics in the dosage
               range of 0.2 to 0.7 mcg/kg/hr when administered by intravenous
