@@ -8,6 +8,7 @@ const deviceWidth = parseInt(Dimensions.get("window").width);
 
 export default class StrengthChooser extends Component {
   render() {
+    const { currentStrength } = this.props;
     return (
       <View>
         <Footer>
@@ -17,13 +18,26 @@ export default class StrengthChooser extends Component {
               shadowRadius={0}
               rippleDuration={200}
               maskDuration={150}
-              style={styles.button}
+              style={[styles.button]}
               onPress={() => this.props.onChange("4mcg")}
             >
-              <Text style={{ color: "white", fontWeight: "bold" }}>
+              <Text
+                style={{
+                  color: currentStrength === "4mcg" ? "#FFA000" : "white",
+                  fontWeight: "bold"
+                }}
+              >
                 Sedodex
               </Text>
-              <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>4 mcg/ml</Text>
+              <Text
+                style={{
+                  color: currentStrength === "4mcg" ? "#FFA000" : "white",
+                  fontSize: 18,
+                  fontWeight: "bold"
+                }}
+              >
+                4 mcg/ml
+              </Text>
             </MKButton>
             <MKButton
               backgroundColor="#3f51b5"
@@ -33,10 +47,23 @@ export default class StrengthChooser extends Component {
               style={styles.button}
               onPress={() => this.props.onChange("8mcg")}
             >
-              <Text style={{ color: "white", fontWeight: "bold" }}>
+              <Text
+                style={{
+                  color: currentStrength === "8mcg" ? "#FFA000" : "white",
+                  fontWeight: "bold"
+                }}
+              >
                 Sedodex
               </Text>
-              <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>8 mcg/ml</Text>
+              <Text
+                style={{
+                  color: currentStrength === "8mcg" ? "#FFA000" : "white",
+                  fontSize: 18,
+                  fontWeight: "bold"
+                }}
+              >
+                8 mcg/ml
+              </Text>
             </MKButton>
           </FooterTab>
         </Footer>

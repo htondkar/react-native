@@ -148,7 +148,7 @@ export default class Calculator extends Component {
         <View
           style={{ display: "flex", flex: 1, justifyContent: "space-between" }}
         >
-          <View style={styles.imageContainer} >
+          <View style={styles.imageContainer}>
             <TouchableHighlight onPress={this.goBack} underlayColor="white">
               <Image source={logo} style={styles.logo} />
             </TouchableHighlight>
@@ -172,7 +172,10 @@ export default class Calculator extends Component {
             )}
           />
         </View>
-        <StrengthChooser onChange={this.onStrengthValue} />
+        <StrengthChooser
+          onChange={this.onStrengthValue}
+          currentStrength={this.state.strength}
+        />
       </ScrollView>
     );
   }
