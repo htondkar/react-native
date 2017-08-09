@@ -16,6 +16,7 @@ export default class AdministrationWithOtherFluids extends Component {
   }
 
   changeFontSize = option => {
+    this.makeVisible();
     const { fontSize: currentSize } = this.state;
     if (option === "+") {
       if (currentSize < 24) {

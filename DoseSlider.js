@@ -4,7 +4,9 @@ import Carousel from "react-native-snap-carousel";
 import Dimensions from "Dimensions";
 import { Icon } from "native-base";
 import { MKButton } from "react-native-material-kit";
+
 const deviceWidth = parseInt(Dimensions.get("window").width);
+const deviceHeight = parseInt(Dimensions.get("window").height);
 const weightArray = Array.from({ length: 9 }, (v, k) => k + 1);
 
 const DoseSlider = ({ onChange, strength, dose }) =>
@@ -105,8 +107,10 @@ const flexCenter = {
 
 const styles = StyleSheet.create({
   container: {
+    // ...border,
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    height: 0.2 * deviceHeight
   },
   sliderIndicator: {
     // ...border,
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
     color: colors.imagenCol
   },
   extraInfo: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     ...flexCenter,
     width: deviceWidth,
     position: "absolute",

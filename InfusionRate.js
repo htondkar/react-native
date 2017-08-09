@@ -52,6 +52,7 @@ const colors = {
 
 const styles = StyleSheet.create({
   container: {
+    // ...border,
     backgroundColor: "#FFFFFF",
     justifyContent: "center",
     alignItems: "center",
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 20,
     backgroundColor: colors.imagenCol,
-    marginBottom: 20
+    // marginBottom: 20
   },
   resultText: {
     color: "#FFA000",

@@ -36,6 +36,20 @@ const getRate = (weight, dose, strength) => {
   return table[strength][weight][dose];
 };
 
+const headerOptions = {
+  headerRight: <View />, //a hack for flex-box centering
+  headerStyle: {
+    shadowOpacity: 0,
+    shadowRadius: 0,
+    elevation: 0
+  },
+  headerTitleStyle: {
+    fontFamily: Platform.OS === "ios" ? "System" : "sans-serif-thin",
+    alignSelf: "center"
+  },
+  headerTintColor: colors.aqua
+};
+
 const ModalContent = ({ onAction }) =>
   <View style={styles.modal}>
     <View style={{ backgroundColor: "white", padding: 20 }}>
@@ -81,7 +95,8 @@ const ModalContent = ({ onAction }) =>
 
 export default class Calculator extends Component {
   static navigationOptions = ({ navigation, screenProps }) => ({
-    title: "Calculator"
+    title: "Dosing Calculator",
+    ...headerOptions
   });
 
   constructor(props) {
@@ -146,13 +161,19 @@ export default class Calculator extends Component {
           <ModalContent onAction={this.selectStrength} />
         </Modal>
         <View
-          style={{ display: "flex", flex: 1, justifyContent: "space-between" }}
+          style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "space-around"
+          }}
         >
-          <View style={styles.imageContainer}>
-            <TouchableHighlight onPress={this.goBack} underlayColor="white">
-              <Image source={logo} style={styles.logo} />
-            </TouchableHighlight>
-          </View>
+          {Platform.OS === "android" &&
+            deviceHeight > 600 &&
+            <View style={styles.imageContainer}>
+              <TouchableHighlight onPress={this.goBack} underlayColor="white">
+                <Image source={logo} style={styles.logo} />
+              </TouchableHighlight>
+            </View>}
           <WeightSlider
             onChange={this.onValueWeight}
             strength={this.state.strength}
@@ -183,7 +204,7 @@ export default class Calculator extends Component {
 
 const border = {
   borderWidth: 1,
-  borderColor: "#A0A0A0"
+  borderColor: "red"
 };
 
 const styles = StyleSheet.create({

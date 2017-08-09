@@ -6,7 +6,7 @@ import {
   View,
   Image,
   StatusBar,
-  I18nManager,
+  I18nManager
 } from "react-native";
 import { MKButton } from "react-native-material-kit";
 import { Container, Content, List, ListItem, Right, Icon } from "native-base";
@@ -15,7 +15,7 @@ import { titles } from "./text";
 import { StackNavigator, navigate } from "react-navigation";
 import Information from "./Information";
 import Calculator from "./Calculator";
-import logo from "./images/logo.jpg";
+import logo from "./images/newLogo.jpg";
 import Orientation from "react-native-orientation-locker";
 
 try {
@@ -131,9 +131,9 @@ const Router = StackNavigator(
     },
     Calculator: {
       screen: Calculator,
-      navigationOptions: {
-        header: null
-      }
+      // navigationOptions: {
+      //   header: null
+      // }
     }
   },
   {
@@ -151,7 +151,6 @@ const colors = {
 };
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
     justifyContent: "flex-start",

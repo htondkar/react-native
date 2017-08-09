@@ -15,7 +15,7 @@ import { titles } from "./text";
 import { StackNavigator, navigate } from "react-navigation";
 import Information from "./Information";
 import Calculator from "./Calculator";
-import logo from "./images/logo.jpg";
+import logo from "./images/newLogo.jpg";
 import Orientation from "react-native-orientation-locker";
 
 try {
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     display: "flex",
     alignItems: "center",
-    shadowColor: "red",
+    // shadowColor: "red",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2

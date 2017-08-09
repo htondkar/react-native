@@ -26,7 +26,7 @@ const colors = {
 const headerOptions = {
   headerRight: <View />, //a hack for flex-box centering
   headerStyle: {
-    shadowOpacity: 1,
+    shadowOpacity: .5,
     shadowRadius: 5,
     elevation: 3
   },
