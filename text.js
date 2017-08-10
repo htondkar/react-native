@@ -1,19 +1,20 @@
+// orders are not the same with ids
 export const titles = [
-  { text: "Administration with Other Fluids", id: 1 },
-  { text: "Adverse Effects", id: 2 },
-  { text: "Clinical Pharmacology", id: 3 },
-  { text: "Dosage & Administration", id: 4 },
-  { text: "Dosing Formula", id: 5 },
-  { text: "Drug Information", id: 6 },
-  { text: "Drug Interactions", id: 7 },
-  { text: "Incompatibilities", id: 8 },
+  { text: "Sedodex Information", id: 6 },
   { text: "Indication", id: 9 },
+  { text: "Dosing Formula", id: 5 },
+  { text: "Dosage & Administration", id: 4 },
   { text: "Mechanism of Action / Effect", id: 10 },
-  { text: "More Information", id: 11 },
-  { text: "Overdose", id: 12 },
   { text: "Pharmacokinetic Property", id: 13 },
+  { text: "Clinical Pharmacology", id: 3 },
   { text: "Use in Specific Population", id: 14 },
-  { text: "Warnings & Precautions", id: 15 }
+  { text: "Drug Interactions", id: 7 },
+  { text: "Warnings & Precautions", id: 15 },
+  { text: "Administration with Other Fluids", id: 1 },
+  { text: "Overdose", id: 12 },
+  { text: "Adverse Effects", id: 2 },
+  { text: "Incompatibilities", id: 8 },
+  { text: "More Information", id: 11 },
 ];
 
 export const incompatibilities = `Administration with Other Fluids: Dexmedetomidine infusion should not be co-administered through the same intravenous catheter with blood or plasma because physical compatibility has not been established. Dexmedetomidine has been shown to be incompatible when administered with the following drugs: Amphotericin B, Diazepam.
